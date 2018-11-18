@@ -1,0 +1,3434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::ClickFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Анализ ошибок определения местоположения различными способами</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton #pushButton_3{
+	border-radius:10%;
+	
+	
+}</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowNestedDocks|QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks|QMainWindow::GroupedDragging</set>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>30</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:10%;
+background-color:white;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Угломерно-дальномерная РПС</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>30</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:10%;
+background-color:white;
+</string>
+    </property>
+    <property name="text">
+     <string>Угломерная РПС</string>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>30</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:10%;
+background-color:white;
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Разностно-дальномерная РПС</string>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>391</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Исходные данные:</string>
+    </property>
+    <widget class="QSpinBox" name="spinBox_4">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>60</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Размеры РСИ системой ОМП</string>
+     </property>
+     <property name="buddy">
+      <cstring>spinBox_4</cstring>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_5">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>5</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>171</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Количество пеленгаторов</string>
+     </property>
+     <property name="buddy">
+      <cstring>spinBox_5</cstring>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>610</y>
+      <width>411</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Дополнительные параметры:</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>СКО угла места</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>110</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>СКО угла места</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_6">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>70</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_7">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>140</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_8">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>140</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_9">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>70</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>30</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Угл места</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>110</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Высота слоя</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_26">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>СКО t_задерж:</string>
+     </property>
+     <property name="buddy">
+      <cstring>spinBox_6</cstring>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_27">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_28">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>70</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>*10^(-9) нс</string>
+     </property>
+     <property name="buddy">
+      <cstring>spinBox_9</cstring>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_29">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>70</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>*-10^(-9) нс</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>650</y>
+      <width>801</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Вероятность нахожения ИРИ в эллипсе ошибок</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>P=</string>
+     </property>
+     <property name="buddy">
+      <cstring>doubleSpinBox</cstring>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="doubleSpinBox">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>40</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>251</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Результаты расчетов</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Радиус окружности</string>
+     </property>
+     <property name="buddy">
+      <cstring>lineEdit</cstring>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>120</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Площадь окуржности СКО</string>
+     </property>
+     <property name="buddy">
+      <cstring>lineEdit_2</cstring>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>160</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>120</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>км</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>160</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>км^2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>40</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Параметры эллипса ошибок:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>80</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Полуоси: </string>
+     </property>
+     <property name="buddy">
+      <cstring>lineEdit_3</cstring>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>70</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>a=</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>b=</string>
+     </property>
+     <property name="buddy">
+      <cstring>lineEdit_4</cstring>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>140</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Площадь:</string>
+     </property>
+     <property name="buddy">
+      <cstring>lineEdit_5</cstring>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>70</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>100</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_5">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>140</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_22">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>200</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Угол наклона оси:</string>
+     </property>
+     <property name="buddy">
+      <cstring>lineEdit_6</cstring>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_6">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>200</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>70</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>км</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_24">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>км</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_25">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>140</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>км^2</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>240</y>
+      <width>471</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>451</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Данные РЭС</string>
+      </property>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>55</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ИРИ:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PП_1</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>РП_2:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>РП_3:</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>40</y>
+         <width>120</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Дальность:</string>
+       </property>
+       <widget class="QLabel" name="label_41">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>70</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>км</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_42">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>110</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>км</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_43">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>150</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>км</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_7">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_9">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_11">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>11</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>40</y>
+         <width>171</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Координаты</string>
+       </property>
+       <widget class="QLabel" name="label_31">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_36</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_29">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>150</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_30">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_32">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_30</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_33">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_29</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_34">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>150</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_34</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_31">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>110</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_35">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_31</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_32">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>70</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_33">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>30</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_36">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>70</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_32</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_34">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>150</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_35">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>110</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_37">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>110</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_35</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_38">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_33</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_36">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>30</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>451</width>
+         <height>321</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Данные РЭС</string>
+       </property>
+       <widget class="QLabel" name="label_30">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ИРИ:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_39">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PП_1</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_40">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>РП_2:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_44">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>190</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>РП_3:</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_8">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>40</y>
+          <width>120</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Дальность:</string>
+        </property>
+        <widget class="QLabel" name="label_45">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>70</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>км</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_46">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>110</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>км</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_47">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>150</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>км</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_8">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>51</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>7</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_10">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>51</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>9</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_12">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>51</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>11</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_9">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>40</y>
+          <width>191</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Координаты</string>
+        </property>
+        <widget class="QLabel" name="label_48">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>30</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_36</cstring>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_37">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>150</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_38">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>70</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_49">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>70</y>
+           <width>21</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_30</cstring>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_50">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>150</y>
+           <width>21</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_29</cstring>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_51">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>150</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_34</cstring>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_39">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>110</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_52">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>110</y>
+           <width>21</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_31</cstring>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_40">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>70</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_41">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>30</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_53">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>70</y>
+           <width>51</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_32</cstring>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_42">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>150</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_43">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>110</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_54">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>110</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_35</cstring>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_55">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>30</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y=</string>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_33</cstring>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_44">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>30</y>
+           <width>42</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QGroupBox" name="groupBox_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>451</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Данные РЭС</string>
+      </property>
+      <widget class="QLabel" name="label_56">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>55</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ИРИ:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_57">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PП_1</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_58">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>РП_2:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_59">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>РП_3:</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_12">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>40</y>
+         <width>211</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Координаты</string>
+       </property>
+       <widget class="QLabel" name="label_63">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_36</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_45">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>150</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_46">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_64">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_30</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_65">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_29</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_66">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>150</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_34</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_47">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>110</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_67">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_31</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_48">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>70</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_49">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>30</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_68">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>70</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_32</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_50">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>150</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_51">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>110</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_69">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>110</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_35</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_70">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_33</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_52">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>30</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QGroupBox" name="groupBox_13">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>431</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Данные РЭС</string>
+      </property>
+      <widget class="QLabel" name="label_71">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>55</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ИРИ:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_72">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PП_1</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_14">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>40</y>
+         <width>120</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Дальность:</string>
+       </property>
+       <widget class="QLabel" name="label_75">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>70</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_76">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>110</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_77">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>150</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_13">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_14">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_15">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_17">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>210</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_18">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>180</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_15">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>40</y>
+         <width>191</width>
+         <height>261</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Координаты</string>
+       </property>
+       <widget class="QLabel" name="label_78">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_36</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_54">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_79">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_30</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_56">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>70</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_57">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>30</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_83">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>70</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_32</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_85">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_33</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_60">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>30</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QStackedWidget" name="stackedWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>130</y>
+          <width>471</width>
+          <height>361</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="page_6">
+         <widget class="QGroupBox" name="groupBox_11">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>30</y>
+            <width>451</width>
+            <height>261</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Данные РЭС</string>
+          </property>
+          <widget class="QLabel" name="label_60">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>70</y>
+             <width>55</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>ИРИ:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_61">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>PП_1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_62">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>150</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>РП_2:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_82">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>190</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>РП_3:</string>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_16">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>40</y>
+             <width>120</width>
+             <height>181</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Дальность:</string>
+           </property>
+           <widget class="QLabel" name="label_84">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>70</y>
+              <width>31</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>км</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_86">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>110</y>
+              <width>31</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>км</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_87">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>150</y>
+              <width>31</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>км</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_16">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>70</y>
+              <width>51</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_19">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>110</y>
+              <width>51</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>9</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_20">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>150</y>
+              <width>51</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>11</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_17">
+           <property name="geometry">
+            <rect>
+             <x>70</x>
+             <y>40</y>
+             <width>171</width>
+             <height>181</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Координаты</string>
+           </property>
+           <widget class="QLabel" name="label_88">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>30</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_36</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_53">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>150</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_55">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>70</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_89">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>70</y>
+              <width>21</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_30</cstring>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_90">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>150</y>
+              <width>21</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_29</cstring>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_91">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>150</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_34</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_58">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>110</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_92">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>110</y>
+              <width>21</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_31</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_59">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>70</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_61">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>30</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_93">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>70</y>
+              <width>51</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_32</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_62">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>150</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_63">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>110</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_94">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>110</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_35</cstring>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_95">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>30</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_33</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_64">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>30</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_18">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>451</width>
+             <height>321</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Данные РЭС</string>
+           </property>
+           <widget class="QLabel" name="label_96">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>70</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>ИРИ:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_97">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>110</y>
+              <width>51</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>PП_1</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_98">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>150</y>
+              <width>51</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>РП_2:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_99">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>190</y>
+              <width>51</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>РП_3:</string>
+            </property>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_19">
+            <property name="geometry">
+             <rect>
+              <x>270</x>
+              <y>40</y>
+              <width>120</width>
+              <height>181</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Дальность:</string>
+            </property>
+            <widget class="QLabel" name="label_100">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>70</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>км</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_101">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>110</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>км</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_102">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>150</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>км</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="lineEdit_21">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>70</y>
+               <width>51</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>7</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="lineEdit_22">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>110</y>
+               <width>51</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>9</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="lineEdit_23">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>150</y>
+               <width>51</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>11</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_20">
+            <property name="geometry">
+             <rect>
+              <x>70</x>
+              <y>40</y>
+              <width>171</width>
+              <height>181</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Координаты</string>
+            </property>
+            <widget class="QLabel" name="label_103">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>30</y>
+               <width>55</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_36</cstring>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_65">
+             <property name="geometry">
+              <rect>
+               <x>50</x>
+               <y>150</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_66">
+             <property name="geometry">
+              <rect>
+               <x>50</x>
+               <y>70</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_104">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>70</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_30</cstring>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_105">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>150</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_29</cstring>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_106">
+             <property name="geometry">
+              <rect>
+               <x>100</x>
+               <y>150</y>
+               <width>55</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_34</cstring>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_67">
+             <property name="geometry">
+              <rect>
+               <x>50</x>
+               <y>110</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_107">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>110</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_31</cstring>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_68">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>70</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_69">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>30</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_108">
+             <property name="geometry">
+              <rect>
+               <x>100</x>
+               <y>70</y>
+               <width>51</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_32</cstring>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_70">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>150</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_71">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>110</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_109">
+             <property name="geometry">
+              <rect>
+               <x>100</x>
+               <y>110</y>
+               <width>55</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_35</cstring>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_110">
+             <property name="geometry">
+              <rect>
+               <x>100</x>
+               <y>30</y>
+               <width>55</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y=</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBox_33</cstring>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spinBox_72">
+             <property name="geometry">
+              <rect>
+               <x>50</x>
+               <y>30</y>
+               <width>42</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_7">
+         <widget class="QGroupBox" name="groupBox_21">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>40</y>
+            <width>451</width>
+            <height>261</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Данные РЭС</string>
+          </property>
+          <widget class="QLabel" name="label_111">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>70</y>
+             <width>55</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>ИРИ:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_112">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>PП_1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_113">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>150</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>РП_2:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_114">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>190</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>РП_3:</string>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_22">
+           <property name="geometry">
+            <rect>
+             <x>70</x>
+             <y>40</y>
+             <width>171</width>
+             <height>181</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Координаты</string>
+           </property>
+           <widget class="QLabel" name="label_115">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>30</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_36</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_73">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>150</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_74">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>70</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_116">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>70</y>
+              <width>21</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_30</cstring>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_117">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>150</y>
+              <width>21</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_29</cstring>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_118">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>150</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_34</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_75">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>110</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_119">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>110</y>
+              <width>21</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>X=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_31</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_76">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>70</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_77">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>30</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_120">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>70</y>
+              <width>51</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_32</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_78">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>150</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_79">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>110</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_121">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>110</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_35</cstring>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_122">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>30</y>
+              <width>55</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y=</string>
+            </property>
+            <property name="buddy">
+             <cstring>spinBox_33</cstring>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_80">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>30</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_8"/>
+       </widget>
+       <widget class="QLabel" name="label_123">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_30</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_124">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>110</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_32</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_81">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>110</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_82">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>110</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_84">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>150</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_126">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>150</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_32</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_125">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_30</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_83">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>150</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_86">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>180</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_85">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>180</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_128">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>180</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_32</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_127">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>180</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_30</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_129">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>210</y>
+          <width>21</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_30</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_130">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>210</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y=</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox_32</cstring>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_87">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>210</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_88">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>210</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_73">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PП_2</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_74">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PП_3</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_80">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PП_4</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_81">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>250</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PП_5</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>100</y>
+      <width>411</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page_4">
+     <widget class="QCustomPlot" name="widget_2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>341</width>
+        <height>301</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QTextEdit" name="textEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>341</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Данный метод не работает при таком количестве РПС&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QCustomPlot" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>100</y>
+      <width>461</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>520</y>
+      <width>381</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Посмотреть фитографии станций</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>spinBox_4</tabstop>
+  <tabstop>spinBox_36</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>spinBox_5</tabstop>
+  <tabstop>spinBox_29</tabstop>
+  <tabstop>spinBox_30</tabstop>
+  <tabstop>spinBox_31</tabstop>
+  <tabstop>spinBox_32</tabstop>
+  <tabstop>spinBox_33</tabstop>
+  <tabstop>spinBox_34</tabstop>
+  <tabstop>spinBox_35</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>spinBox_6</tabstop>
+  <tabstop>spinBox_7</tabstop>
+  <tabstop>spinBox_8</tabstop>
+  <tabstop>spinBox_9</tabstop>
+  <tabstop>doubleSpinBox</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>lineEdit_5</tabstop>
+  <tabstop>lineEdit_6</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
