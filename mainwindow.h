@@ -3,6 +3,13 @@
 
 #include <QMainWindow>
 #include <QPixmap>
+
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsItem>
+#include <QGraphicsLineItem>
+#include <QGraphicsPixmapItem>
+
 #include "photowindow.h"
 
 
@@ -46,6 +53,14 @@ private:
 
     Ui::MainWindow *ui;
     PhotoWindow *window;
+
+    QGraphicsScene *scene;
+    QGraphicsEllipseItem *ellipse;
+    QGraphicsTextItem *text;
+    QGraphicsRectItem *rectangle;
+    QGraphicsRectItem *rectangle1;
+    QGraphicsRectItem *rectangle2;
+    QGraphicsRectItem *rectangle3;
 
 
 

@@ -24,98 +24,87 @@ MainWindow::MainWindow(QWidget *parent) :
       connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(aButtonClicked()));
       connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(aButtonClicked()));
       // create empty curve objects:
-     QVector<double> x(1000), y(1000);
-     for (int i = 0; i < 1000; ++i) {
-         x[i]=qSin(i);
-         y[i]=2*qCos(i);
+
+
+
+
+     QCPCurve *fermatSpiral1 = new QCPCurve(ui->widget_2->xAxis, ui->widget_2->yAxis);
+     QCPCurve *deltoidRadial = new QCPCurve(ui->widget_2->xAxis, ui->widget_2->yAxis);
+     // generate the curve data points:
+     const int pointCount = 500;
+
+     QVector<QCPCurveData> dataSpiral(pointCount), dataSpiral1(pointCount);
+     for (int i=0; i<pointCount; ++i)
+     {
+        double phi = i/(double)(pointCount-1)*2*M_PI;
+
+       dataSpiral[i] = QCPCurveData(i, qCos(phi), qSin(phi));
+       dataSpiral1[i]=QCPCurveData(i, 2*qCos(phi), qSin(phi));
+
      }
-     QVector<double> x1(1000), y1(1000);
-     for (int i = 0; i < 1000; ++i) {
-         x1[i]=2*qSin(i);
-         y1[i]=qCos(i);
-     }
+     // pass the data to the curves; we know t (i in loop above) is ascending, so set alreadySorted=true (saves an extra internal sort):
+     fermatSpiral1->data()->set(dataSpiral1, true);
+     deltoidRadial->data()->set(dataSpiral, true);
+     // color the curves:
+     fermatSpiral1->setPen(QPen(Qt::blue));
+ //    fermatSpiral1->setBrush(QBrush(QColor(0, 0, 255, 20)));
+ //    fermatSpiral2->setPen(QPen(QColor(255, 120, 0)));
+ //    fermatSpiral2->setBrush(QBrush(QColor(255, 120, 0, 30)));
 
-     ui->widget_2->addGraph();
-     ui->widget_2->graph(0)->setData(x,y);
-//     ui->widget_2->xAxis->setLabel("x");
-//     ui->widget_2->yAxis->setLabel("y");
-     ui->widget_2->addGraph();
-     ui->widget_2->graph(1)->setData(x1,y1);
-     ui->widget_2->graph(1)->setPen(QPen(Qt::red));
-     ui->widget_2->xAxis->setRange(-5,5);
-//     ui->widget_2->graph(0)->rescaleAxes();
-//     ui->widget_2->graph(1)->rescaleAxes(true);
+     deltoidRadial->setPen(QPen(QColor(Qt::red)));
+    // deltoidRadial->setBrush(QBrush(radialGrad));
+     // set some basic customPlot config:
+//     ui->widget_2->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    ui->widget_2->axisRect()->setupFullAxesBox();
+    ui->widget_2->xAxis->setRange(-4, 4);
+     ui->widget_2->yAxis->setRange(-4,4);
+//     ui->widget_2->rescaleAxes();
 
-     ui->widget_2->yAxis->setRange(-5,5);
-     ui->widget_2->replot();
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-
-
-
-
-
-
-
-//      //Рисуем график y=x*x
-
-//          //Сгенерируем данные
-//          //Для этого создадим два массива точек:
-//          //один для созранения x координат точек,
-//          //а второй для y соответственно
-
-//          double a = 0; //Начало интервала, где рисуем график по оси Ox
-//          double b =  100; //Конец интервала, где рисуем график по оси Ox
-//          double h = 1; //Шаг, с которым будем пробегать по оси Ox
-
-//          int N=(b-a)/h + 2; //Вычисляем количество точек, которые будем отрисовывать
-//          QVector<double> x(N), y(N); //Массивы координат точек
-
-//          //Вычисляем наши данные
-//          int i=0;
-//          for (double X=a; X<=b; X+=h)//Пробегаем по всем точкам
-//          {
-//              x[i] = X;
-//              y[i] = X*X;//Формула нашей функции
-//              i++;
-//          }
-
-//          ui->widget->clearGraphs();//Если нужно, но очищаем все графики
-//          //Добавляем один график в widget
-//          ui->widget->addGraph();
-//          //Говорим, что отрисовать нужно график по нашим двум массивам x и y
-//          ui->widget->graph(0)->setData(x, y);
-
-//          //Подписываем оси Ox и Oy
-//          ui->widget->xAxis->setLabel("x");
-//          ui->widget->yAxis->setLabel("y");
-
-//          //Установим область, которая будет показываться на графике
-//          ui->widget->xAxis->setRange(a, b);//Для оси Ox
-
-//          //Для показа границ по оси Oy сложнее, так как надо по правильному
-//          //вычислить минимальное и максимальное значение в векторах
-//          double minY = y[0], maxY = y[0];
-//          for (int i=1; i<N; i++)
-//          {
-//              if (y[i]<minY) minY = y[i];
-//              if (y[i]>maxY) maxY = y[i];
-//          }
-//          ui->widget->yAxis->setRange(minY, maxY);//Для оси Oy
-
-//          //И перерисуем график на нашем widget
-//          ui->widget->replot();
      scene = new QGraphicsScene(0,0,420,420,this);
      ui->graphicsView->setScene(scene);
 
 
 
+     QBrush greenBrush(Qt::green);
+     QBrush blueBrush(Qt::blue);
+     QPen outlinePen(Qt::black);
+     outlinePen.setWidth(2);
+
+     rectangle = scene->addRect(100, 0, 20, 20, outlinePen, blueBrush);
+     rectangle->setFlag(QGraphicsItem::ItemIsMovable);
+
+
+     rectangle1 = scene->addRect(0, 0, 20, 20, outlinePen, blueBrush);
+     rectangle1->setFlag(QGraphicsItem::ItemIsMovable);
+
+     rectangle2 = scene->addRect(50, 0, 20, 20, outlinePen, blueBrush);
+     rectangle2->setFlag(QGraphicsItem::ItemIsMovable);
+
+     rectangle3 = scene->addRect(70, 0, 20, 20, outlinePen, blueBrush);
+     rectangle3->setFlag(QGraphicsItem::ItemIsMovable);
+
+
+
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-void MainWindow::aButtonClicked() //change "class" to your class its name
+void MainWindow::aButtonClicked()
 {
   check=true;
 }
