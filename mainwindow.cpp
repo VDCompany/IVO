@@ -108,6 +108,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 //          //И перерисуем график на нашем widget
 //          ui->widget->replot();
+     scene = new QGraphicsScene(0,0,420,420,this);
+     ui->graphicsView->setScene(scene);
 
 
 
